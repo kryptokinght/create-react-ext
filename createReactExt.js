@@ -1,27 +1,16 @@
-var inquirer = require('inquirer');
+const inquirer = require('inquirer');
+const path = require('path');
+
+const mode_questions = require('./lib/mode_questions');
+const create_template = require('./lib/create_template');
 
 async function main() {
-  const ans = await inquirer.prompt([
-    {
-      type: 'list',
-      message: 'What kind of extension do you want?',
-      name: 'extensionType',
-      choices: [
-        "Just give me an extension (with recommended config)",
-        "Basic Extension           (no React and config)",
-        "Custom React extension    (add your own toppings)"
-      ],
-      validate: function (answer) {
-        if (answer.length < 1) {
-          return 'Choose at least one of the extension types!';
-        }
-        return true;
-      }
-    }
-  ]);
+  const args = process.argv;
+  const filename = args[args.length - 1];
+  const ans = await inquirer.prompt([mode_questions]);
 
-  console.log(JSON.stringify(ans, null, '  '));
-  console.log();
+  create_template(ans.mode, filename);
+
 }
 
 
