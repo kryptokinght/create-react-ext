@@ -1,29 +1,44 @@
-# basic template
+# Create React Extension basic Boilerplate
 
 Template for creating a baic web extension
 
-## Install
+## Installation :checkered_flag:
 
-	$ npm install
+```bash
+# Install dependencies
+$ npm install
+```
 
-## Development
+## Development :computer:
 
-    npm run dev chrome
-    npm run dev firefox
-    npm run dev opera
-    npm run dev edge
+* Run script
+```bash
+# Launches the web-ext from the app/ folder
+# in the respective browser instance
+$ npm run start:chrome
+# launches in firefox
+$ npm run start:mozilla
+```
 
-## Build
+## Build :wrench: :hammer:
 
-    npm run build chrome
-    npm run build firefox
-    npm run build opera
-    npm run build edge
+*The app/ folder is also the build folder and the extension is packaged from the app/ folder only.*
 
-## Environment
 
-The build tool also defines a variable named `process.env.NODE_ENV` in your scripts. 
+## Compress :nut_and_bolt: 
 
-## Docs
+```bash
+# compress app/ folder to {manifest.name}.zip and crx
+$ npm run compress -- [options]
+```
 
-* [webextension-toolbox](https://github.com/HaNdTriX/webextension-toolbox)
+#### Options
+
+If you want to build `crx` file (auto update), please provide options, and add `update.xml` file url in [manifest.json](https://developer.chrome.com/extensions/autoupdate#update_url manifest.json).
+
+* --app-id: your extension id (can be get it when you first release extension)
+* --key: your private key path (default: './key.pem')  
+  you can use `npm run compress-keygen` to generate private key `./key.pem`
+* --codebase: your `crx` file url
+
+See [autoupdate guide](https://developer.chrome.com/extensions/autoupdate) for more information.

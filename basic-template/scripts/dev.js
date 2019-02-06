@@ -1,4 +1,4 @@
-/* Minimal start.js file */
+/* Minimal dev.js file */
 
 const execa = require('execa');
 const argv = require('yargs').argv;

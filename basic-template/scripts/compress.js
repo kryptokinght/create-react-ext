@@ -1,6 +1,5 @@
 const fs = require('fs');
 const ChromeExtension = require('crx');
-/* eslint import/no-unresolved: 0 */
 const argv = require('minimist')(process.argv.slice(2));
 const name = require('../src/manifest.json').name;
 
@@ -13,7 +12,7 @@ const crx = new ChromeExtension({
   privateKey: existsKey ? fs.readFileSync(keyPath) : null
 });
 
-crx.load('extension')
+crx.load('app')
   .then(() => crx.loadContents())
   .then((archiveBuffer) => {
     fs.writeFile(`${name}.zip`, archiveBuffer);
