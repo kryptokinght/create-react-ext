@@ -5,6 +5,9 @@
   "scripts": {
     "start:chrome": "npm run chrome-launch",
     "start:firefox": "npm run firefox-launch",
+    "compress": "node scripts/compress",
+    "compress-keygen": "crx keygen",
+    "clean": "rimraf extension/ *.zip *.crx",
     "build": "node scripts/build.js",
     "chrome-launch": "node scripts/dev.js --browser=chrome",
     "firefox-launch": "node scripts/dev.js --browser=firefox"
