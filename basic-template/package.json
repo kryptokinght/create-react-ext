@@ -1,0 +1,19 @@
+{
+  "name": "basic-template",
+  "version": "0.0.1",
+  "description": "Template for creating a baic web extension",
+  "scripts": {
+    "start:chrome": "npm run chrome-launch",
+    "start:firefox": "npm run firefox-launch",
+    "build": "node scripts/build.js",
+    "chrome-launch": "node scripts/dev.js --browser=chrome",
+    "firefox-launch": "node scripts/dev.js --browser=firefox"
+  },
+  "devDependencies": {
+    "crx": "^4.0.1",
+    "web-ext": "^2.9.3"
+  },
+  "dependencies": {
+    "chrome-launch": "^1.1.4"
+  }
+}
