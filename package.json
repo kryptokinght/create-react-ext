@@ -30,8 +30,9 @@
   "homepage": "https://github.com/kryptokinght/create-react-ext#readme",
   "dependencies": {
     "chalk": "^2.4.2",
+    "fs-extra": "^7.0.1",
     "inquirer": "^6.2.2",
     "minimist": "^1.2.0",
-    "ncp": "^2.0.0"
+    "ora": "^3.0.0"
   }
 }
